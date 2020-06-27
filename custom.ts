@@ -317,7 +317,8 @@ namespace Trig {
         }
         return sign * 9000;
     }
-    control.assert(atan2(0, 0) == 0, "bad atan2(0, 0) = " + atan2(0, 0));
+    
+    /* control.assert(atan2(0, 0) == 0, "bad atan2(0, 0) = " + atan2(0, 0));
     control.assert(atan2(1, 0) == 9000, "bad atan2(1, 0) = " + atan2(1, 0));
     control.assert(atan2(-1, 0) == -9000, "bad atan2(-1, 0) = " + atan2(-1, 0));
     control.assert(atan2(1, 1) == 4500, "bad atan2(1, 1) = " + atan2(1, 1));
@@ -329,7 +330,7 @@ namespace Trig {
     control.assert(atan2(1, -2) == 15344, "bad atan2(1, -2) = " + atan2(1, -2));
     control.assert(atan2(-1, -2) == -15344, "bad atan2(-1, -2) = " + atan2(1, -2));
     control.assert(atan2(572, 1) == 8990, "bad atan2(572, 1) = " + atan2(572, 1));
-
+ */
     const sin_table: number[] = [
         0, 572, 1144, 1715, 2286, 2856, 3425, 3993, 4560, 5126, // 0
         5690, 6252, 6813, 7371, 7927, 8481, 9032, 9580, 10126, 10668, // 10
@@ -389,7 +390,7 @@ namespace Trig {
         }
     }
 
-    control.assert(sin(0) == 0, "bad sin(0) = " + sin(0));
+    /* control.assert(sin(0) == 0, "bad sin(0) = " + sin(0));
     control.assert(sin(3000) == 16384, "bad sin(3000) = " + sin(3000));
     control.assert(sin(6000) == 28378, "bad sin(6000) = " + sin(6000));
     control.assert(sin(9000) == 32768, "bad sin(9000) = " + sin(9000));
@@ -440,7 +441,7 @@ namespace Trig {
     control.assert(sin(-3070) == -16730, "bad sin(-3070) = " + sin(-3070)); // should really be -16729
     control.assert(sin(-3080) == -16780, "bad sin(-3080) = " + sin(-3080)); // should really be -16779
     control.assert(sin(-3090) == -16829, "bad sin(-3090) = " + sin(-3090)); // should really by -16828
-
+ */
     /**
      * Returns 32768 * cos of the angle.
      * @param angle Degrees * 100, between -18000 and 18000, eg: 9000
@@ -454,7 +455,7 @@ namespace Trig {
             return sin(9000 + angle);
         }
     }
-    control.assert(cos(0) == 32768, "bad cos(0) = " + cos(0));
+    /* control.assert(cos(0) == 32768, "bad cos(0) = " + cos(0));
     control.assert(cos(3000) == 28378, "bad cos(000) = " + cos(3000));
     control.assert(cos(6000) == 16384, "bad cos(6000) = " + cos(6000));
     control.assert(cos(9000) == 0, "bad cos(9000) = " + cos(9000));
@@ -466,7 +467,7 @@ namespace Trig {
     control.assert(cos(-9000) == 0, "bad cos(-9000) = " + cos(-9000));
     control.assert(cos(-12000) == -16384, "bad sin(-12000) = " + sin(-12000));
     control.assert(cos(-15000) == -28378, "bad sin(-15000) = " + sin(-15000));
-    control.assert(cos(-18000) == -32768, "bad sin(-18000) = " + sin(-18000));
+    control.assert(cos(-18000) == -32768, "bad sin(-18000) = " + sin(-18000)); */
 
     /**
      * Rotates a vector [x, y] by angle degrees anti-clockwise and updates it in place.
@@ -485,11 +486,11 @@ namespace Trig {
     }
     let t: number[] = [20000, 30000];
     rotate2d(9000, t);
-    control.assert(t[0] == -30000 && t[1] == 20000, "After rotate 90 wrong: " + t[0] + ", " + t[1]);
+    // control.assert(t[0] == -30000 && t[1] == 20000, "After rotate 90 wrong: " + t[0] + ", " + t[1]);
     rotate2d(-9000, t);
-    control.assert(t[0] == 20000 && t[1] == 30000, "After rotate -90 wrong: " + t[0] + ", " + t[1]);
+    // control.assert(t[0] == 20000 && t[1] == 30000, "After rotate -90 wrong: " + t[0] + ", " + t[1]);
     rotate2d(4500, t);
-    control.assert(t[0] == -7071 && t[1] == 35354, "After rotate 45 wrong: " + t[0] + ", " + t[1]);
+    // control.assert(t[0] == -7071 && t[1] == 35354, "After rotate 45 wrong: " + t[0] + ", " + t[1]);
     rotate2d(-4500, t);
-    control.assert(t[0] == 19998 && t[1] == 29998, "After rotate -45 wrong: " + t[0] + ", " + t[1]);
+    // control.assert(t[0] == 19998 && t[1] == 29998, "After rotate -45 wrong: " + t[0] + ", " + t[1]);
 }
