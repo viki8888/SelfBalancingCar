@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "radio": "*",
+        "robotbit": "github:kittenbot/pxt-robotbit#v0.3.6"
     },
     "files": [
         "main.blocks",
